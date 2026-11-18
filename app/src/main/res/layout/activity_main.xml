@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- En-tête -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.15"
+                    android:text="@string/app_title"
+                    android:textColor="@color/cyan"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_subtitle"
+                    android:textColor="@color/text_dim"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btnSettings"
+                style="@style/MS.HeaderButton"
+                android:text="@string/settings" />
+        </LinearLayout>
+
+        <!-- État du VPN -->
+        <TextView
+            android:id="@+id/txtVpn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_chip_warn"
+            android:paddingStart="14dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="10dp"
+            android:text="@string/vpn_off"
+            android:textColor="@color/orange"
+            android:textSize="13sp" />
+
+        <!-- Bouton principal -->
+        <FrameLayout
+            android:id="@+id/btnPower"
+            android:layout_width="190dp"
+            android:layout_height="190dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/bg_power_off"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgPower"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_power"
+                    android:tint="@color/cyan" />
+
+                <TextView
+                    android:id="@+id/txtPower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:letterSpacing="0.12"
+                    android:text="@string/start"
+                    android:textColor="@color/cyan"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="center"
+            android:text="@string/status_stopped"
+            android:textColor="@color/text"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/txtError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_chip_error"
+            android:padding="12dp"
+            android:textColor="@color/red"
+            android:textSize="13sp"
+            android:visibility="gone" />
+
+        <!-- Étape 1 : Wi-Fi -->
+        <LinearLayout
+            android:id="@+id/cardWifi"
+            style="@style/MS.Card"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/MS.CardTitle"
+                android:text="@string/step_wifi" />
+
+            <TextView
+                android:id="@+id/txtWifiState"
+                style="@style/MS.Hint"
+                android:text="@string/wifi_creating" />
+
+            <LinearLayout
+                android:id="@+id/wifiDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout style="@style/MS.Row">
+                    <LinearLayout style="@style/MS.RowText">
+                        <TextView style="@style/MS.Label" android:text="@string/wifi_name" />
+                        <TextView android:id="@+id/txtSsid" style="@style/MS.Value" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btnCopySsid" style="@style/MS.CopyButton" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/MS.Row">
+                    <LinearLayout style="@style/MS.RowText">
+                        <TextView style="@style/MS.Label" android:text="@string/wifi_pass" />
+                        <TextView android:id="@+id/txtPass" style="@style/MS.Value" />
+                    </LinearLayout>
+                    <TextView android:id="@+id/btnCopyPass" style="@style/MS.CopyButton" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imgQr"
+                    android:layout_width="210dp"
+                    android:layout_height="210dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_qr"
+                    android:contentDescription="@string/qr_desc"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter" />
+
+                <TextView
+                    style="@style/MS.Hint"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/qr_hint" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Wi-Fi Direct indisponible -->
+        <LinearLayout
+            android:id="@+id/cardWifiFail"
+            style="@style/MS.Card"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/MS.CardTitle"
+                android:text="@string/wifi_fail_title"
+                android:textColor="@color/orange" />
+
+            <TextView
+                android:id="@+id/txtWifiFail"
+                style="@style/MS.Hint"
+                android:textColor="@color/text" />
+
+            <TextView
+                style="@style/MS.Hint"
+                android:layout_marginTop="8dp"
+                android:text="@string/wifi_fail_help" />
+
+            <TextView
+                android:id="@+id/btnHotspot"
+                style="@style/MS.HeaderButton"
+                android:layout_marginTop="10dp"
+                android:text="@string/open_hotspot" />
+        </LinearLayout>
+
+        <!-- Étape 2 : Proxy -->
+        <LinearLayout
+            android:id="@+id/cardProxy"
+            style="@style/MS.Card"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/MS.CardTitle"
+                android:text="@string/step_proxy" />
+
+            <TextView
+                style="@style/MS.Hint"
+                android:text="@string/proxy_hint" />
+
+            <LinearLayout style="@style/MS.Row">
+                <LinearLayout style="@style/MS.RowText">
+                    <TextView style="@style/MS.Label" android:text="@string/proxy_server" />
+                    <TextView android:id="@+id/txtProxyIp" style="@style/MS.Value.Big" />
+                </LinearLayout>
+                <TextView android:id="@+id/btnCopyIp" style="@style/MS.CopyButton" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/MS.Row">
+                <LinearLayout style="@style/MS.RowText">
+                    <TextView style="@style/MS.Label" android:text="@string/proxy_port" />
+                    <TextView android:id="@+id/txtProxyPort" style="@style/MS.Value.Big" />
+                </LinearLayout>
+                <TextView android:id="@+id/btnCopyPort" style="@style/MS.CopyButton" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/MS.Row">
+                <LinearLayout style="@style/MS.RowText">
+                    <TextView style="@style/MS.Label" android:text="@string/proxy_pac" />
+                    <TextView android:id="@+id/txtPac" style="@style/MS.Value" android:textSize="13sp" />
+                </LinearLayout>
+                <TextView android:id="@+id/btnCopyPac" style="@style/MS.CopyButton" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtOtherIps"
+                style="@style/MS.Hint"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+
+        <!-- Statistiques -->
+        <LinearLayout
+            android:id="@+id/cardStats"
+            style="@style/MS.Card"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/MS.CardTitle"
+                android:text="@string/stats" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal">
+
+                <LinearLayout style="@style/MS.Stat">
+                    <TextView android:id="@+id/txtStatDevices" style="@style/MS.StatValue" />
+                    <TextView style="@style/MS.StatLabel" android:text="@string/stat_devices" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/MS.Stat">
+                    <TextView android:id="@+id/txtStatWifi" style="@style/MS.StatValue" />
+                    <TextView style="@style/MS.StatLabel" android:text="@string/stat_wifi" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/MS.Stat">
+                    <TextView android:id="@+id/txtStatConn" style="@style/MS.StatValue" />
+                    <TextView style="@style/MS.StatLabel" android:text="@string/stat_conn" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <LinearLayout style="@style/MS.Stat">
+                    <TextView android:id="@+id/txtStatDown" style="@style/MS.StatValue" android:textColor="@color/green" />
+                    <TextView style="@style/MS.StatLabel" android:text="@string/stat_down" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/MS.Stat">
+                    <TextView android:id="@+id/txtStatUp" style="@style/MS.StatValue" android:textColor="@color/violet_light" />
+                    <TextView style="@style/MS.StatLabel" android:text="@string/stat_up" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/MS.Stat">
+                    <TextView android:id="@+id/txtStatTotal" style="@style/MS.StatValue" />
+                    <TextView style="@style/MS.StatLabel" android:text="@string/stat_total" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btnGuide"
+            style="@style/MS.HeaderButton"
+            android:layout_width="match_parent"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:text="@string/guide_button" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:text="@string/footer"
+            android:textColor="@color/text_dim"
+            android:textSize="11sp" />
+    </LinearLayout>
+</ScrollView>

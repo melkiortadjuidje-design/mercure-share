@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mercure Share</string>
+    <string name="app_title">MERCURE SHARE</string>
+    <string name="app_subtitle">Partage de connexion VPN</string>
+    <string name="settings">Réglages</string>
+    <string name="back">← Retour</string>
+
+    <string name="vpn_on">● VPN actif : tous les appareils passeront par votre VPN</string>
+    <string name="vpn_off">● Aucun VPN détecté : activez d\'abord votre VPN pour le partager</string>
+
+    <string name="start">DÉMARRER</string>
+    <string name="stop">ARRÊTER</string>
+    <string name="status_stopped">Partage arrêté</string>
+    <string name="status_starting">Démarrage…</string>
+    <string name="status_running">Partage actif depuis %1$s</string>
+
+    <string name="step_wifi">1. Connectez l\'appareil à ce Wi-Fi</string>
+    <string name="wifi_creating">Création du réseau Wi-Fi…</string>
+    <string name="wifi_ready">Sur l\'autre appareil, choisissez ce réseau dans la liste Wi-Fi :</string>
+    <string name="wifi_name">Nom du Wi-Fi</string>
+    <string name="wifi_pass">Mot de passe</string>
+    <string name="qr_desc">QR code de connexion Wi-Fi</string>
+    <string name="qr_hint">Ou scannez ce code avec l\'appareil photo de l\'autre appareil</string>
+    <string name="wifi_fail_title">Wi-Fi Direct indisponible</string>
+    <string name="wifi_fail_help">Solution : activez le point d\'accès classique du téléphone, connectez-y l\'autre appareil, puis utilisez l\'adresse « Point d\'accès » affichée plus bas.</string>
+    <string name="open_hotspot">Ouvrir les réglages du point d\'accès</string>
+
+    <string name="step_proxy">2. Réglez le proxy sur l\'appareil</string>
+    <string name="proxy_hint">Dans les réglages Wi-Fi de l\'appareil, choisissez Proxy « Manuel » et saisissez :</string>
+    <string name="proxy_server">Serveur / Nom d\'hôte</string>
+    <string name="proxy_port">Port</string>
+    <string name="proxy_pac">Ou proxy automatique (URL)</string>
+
+    <string name="stats">Activité</string>
+    <string name="stat_devices">Appareils\nactifs</string>
+    <string name="stat_wifi">Connectés\nau Wi-Fi</string>
+    <string name="stat_conn">Connexions</string>
+    <string name="stat_down">Réception</string>
+    <string name="stat_up">Envoi</string>
+    <string name="stat_total">Total</string>
+
+    <string name="guide_button">Guide : connecter un PC, iPhone, TV, console…</string>
+    <string name="footer">Mercure Share · aucun appareil n\'a besoin d\'installer d\'application</string>
+
+    <string name="copy">Copier</string>
+    <string name="copied">Copié</string>
+
+    <string name="guide_title">Guide de connexion</string>
+
+    <string name="settings_title">Réglages</string>
+    <string name="set_wifi_direct">Créer le réseau Wi-Fi Direct</string>
+    <string name="set_wifi_direct_hint">Désactivez-le si vous préférez utiliser le point d\'accès classique ou le partage USB du téléphone.</string>
+    <string name="set_name">Nom du réseau</string>
+    <string name="set_name_hint">Lettres, chiffres, - et _ (20 max). Personnalisable sur Android 10 et plus.</string>
+    <string name="set_pass">Mot de passe du réseau</string>
+    <string name="set_pass_hint">8 caractères minimum</string>
+    <string name="set_generate">Générer</string>
+    <string name="set_port">Port du proxy</string>
+    <string name="set_port_hint">Entre 1024 et 65535 (8080 par défaut)</string>
+    <string name="set_band">Bande Wi-Fi</string>
+    <string name="band_auto">Auto</string>
+    <string name="band_2">2,4 GHz (compatible partout)</string>
+    <string name="band_5">5 GHz (plus rapide)</string>
+    <string name="set_save">Enregistrer</string>
+    <string name="set_saved">Réglages enregistrés</string>
+    <string name="set_saved_restart">Réglages enregistrés. Redémarrez le partage pour les appliquer.</string>
+    <string name="set_battery">Empêcher Android d\'arrêter le partage</string>
+    <string name="set_battery_hint">Retire Mercure Share de l\'optimisation de batterie pour que le partage reste actif écran éteint.</string>
+    <string name="set_battery_ok">Déjà autorisé : le partage ne sera pas coupé par l\'économie de batterie.</string>
+    <string name="err_name">Nom invalide : lettres, chiffres, - et _ uniquement (1 à 20)</string>
+    <string name="err_pass">Mot de passe invalide : 8 à 63 caractères</string>
+    <string name="err_port">Port invalide : entre 1024 et 65535</string>
+
+    <string name="dlg_no_vpn_title">Aucun VPN actif</string>
+    <string name="dlg_no_vpn_msg">Aucun VPN n\'est actif sur ce téléphone. Le partage fonctionnera, mais sans passer par un VPN.\n\nActivez votre VPN (par exemple Mercure VPN) avant de partager, ou continuez quand même.</string>
+    <string name="dlg_continue">Continuer</string>
+    <string name="dlg_cancel">Annuler</string>
+    <string name="dlg_location_title">Activez la Position</string>
+    <string name="dlg_location_msg">Sur cette version d\'Android, la Position doit être activée pour créer le réseau Wi-Fi Direct. Mercure Share n\'utilise pas votre position.</string>
+    <string name="dlg_wifi_title">Activez le Wi-Fi</string>
+    <string name="dlg_wifi_msg">Le Wi-Fi du téléphone doit être allumé pour créer le réseau de partage (inutile de vous connecter à un réseau).</string>
+    <string name="dlg_open_settings">Ouvrir les réglages</string>
+    <string name="dlg_without_wifi">Sans Wi-Fi Direct</string>
+    <string name="perm_denied">Autorisation refusée : le réseau Wi-Fi Direct ne pourra peut-être pas démarrer.</string>
+</resources>
